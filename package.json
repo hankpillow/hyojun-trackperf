@@ -1,0 +1,28 @@
+{
+  "name": "hyojun.js.track-perf",
+  "version": "0.1.0",
+  "description": "tiny js lib that helps tracking performance on the browser",
+  "main": "dist/track-perf.js",
+  "scripts": {
+    "lint": "node node_modules/.bin/eslint src/",
+    "pretest": "npm run lint",
+    "test": "echo test",
+    "posttest": "node node_modules/.bin/uglifyjs src/track-perf.js -c sequences=true,dead_code=true,conditionals=true,booleans=true,unused=true,if_return=true,join_vars=true,drop_console=true -m --stats --noerr -o dist/track-perf-min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "foo.git"
+  },
+  "keywords": [
+    "js",
+    "tracking",
+    "perf",
+    "browser"
+  ],
+  "author": "igor almeida",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^1.6.0",
+    "uglifyjs": "^2.4.10"
+  }
+}
