@@ -4,7 +4,7 @@
 	try {
 		window.performance.timing; new Image;
 		t = document.createElement('script');
-		t.async = true; t.src = '//localhost:8000/src/track-perf.js';
+		t.async = true; t.src = 'https://app.getmeat.io/igor-almeida/js-trackperf/repository/raw/branch/working/src/track-perf.js';
 		document.documentElement.appendChild(t);
 	} catch (e) { }
 })();

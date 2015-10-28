@@ -5,7 +5,11 @@
 	var trackperf, win = window, doc = document;
 	
 	trackperf = win[win['hyojun.track-perf']];
-	if (!trackperf || !!trackperf && !trackperf.api_key) return;
+	if (!trackperf || !!trackperf && !trackperf.api_key){
+		trackperf.status = 'missing api';
+	   	return;
+	}
+	trackperf.status = 'ready';
 	
 	function push(t,d){
 		(new Image()).src = [
