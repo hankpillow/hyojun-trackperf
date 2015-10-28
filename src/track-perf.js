@@ -9,7 +9,7 @@
 	
 	function push(t,d){
 		(new Image()).src = [
-			'//localhost:1144/api/track/add?k='+trackperf.api_key,
+			'//localhost:1144/api/track?k='+trackperf.api_key,
 			't='+t].concat(d).join('&');
 	}
 	
