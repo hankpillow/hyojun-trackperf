@@ -1,6 +1,6 @@
 (function(k,n,t){
 	n=n||'trackperf';window['hyojun.track-perf']=n;
-	window[n]=window[n]||{'api_key':k};
+	window[n]=window[n]||{'k':k,'u':'//localhost:1144/api/track'};
 	try {
 		window.performance.timing; new Image;
 		t = document.createElement('script');

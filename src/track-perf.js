@@ -5,7 +5,7 @@
 	var trackperf, win = window, doc = document;
 	
 	trackperf = win[win['hyojun.track-perf']];
-	if (!trackperf || !!trackperf && !trackperf.api_key){
+	if (!trackperf || !!trackperf && !trackperf.k){
 		trackperf.status = 'missing api';
 	   	return;
 	}
@@ -13,8 +13,10 @@
 	
 	function push(t,d){
 		(new Image()).src = [
-			'//localhost:1144/api/track?k='+trackperf.api_key,
-			't='+t].concat(d).join('&');
+			trackperf.u+'?k='+trackperf.k,
+			't='+t]
+			.concat(d)
+			.join('&');
 	}
 	
 	function collect(t){
