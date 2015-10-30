@@ -12,11 +12,8 @@
 	trackperf.status = 'ready';
 	
 	function push(t,d){
-		(new Image()).src = [
-			trackperf.u+'?k='+trackperf.k,
-			't='+t]
-			.concat(d)
-			.join('&');
+		(new Image()).src = [trackperf.u+'?k='+trackperf.k, 't='+t]
+			.concat(d).join('&');
 	}
 	
 	function collect(t){
@@ -47,7 +44,7 @@
 	
 	function loaded(){
 		push('page', collect(win.performance.timing).map(function(blob){
-			blob[1] = parseInt(blob[1]/1000)||0;
+			blob[1] = parseInt(blob[1])||0;
 			return blob.join('=');
 		}));
 	}
